@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio - Leo&Angel Landscaping</title>
+    <link rel="icon" type="image/jpeg" href="{% static 'logo.jpeg' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="{% url 'index' %}" class="logo">
+                    <img src="{% static 'logo.jpeg' %}" alt="Leo&Angel Landscaping Logo">
+                    <span>Leo&Angel Landscaping</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="{% url 'index' %}" class="nav-link">Home</a></li>
+                    <li><a href="{% url 'index' %}#about" class="nav-link">About</a></li>
+                    <li><a href="{% url 'index' %}#services" class="nav-link">Services</a></li>
+                    <li><a href="{% url 'index' %}#before-after" class="nav-link">Before & After</a></li>
+                    <li><a href="{% url 'index' %}#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="{% url 'index' %}#contact" class="nav-link">Contact</a></li>
+                    <li><a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="portfolio portfolio-page">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Portfolio</h2>
+                <p class="section-subtitle">Explore our completed landscaping projects</p>
+            </div>
+            {% if portfolio_projects %}
+            <div class="portfolio-grid">
+                {% for project in portfolio_projects %}
+                <div class="portfolio-card">
+                    <div class="portfolio-image">
+                        <img src="{{ project.photo.url }}" alt="{{ project.title }}" loading="lazy">
+                    </div>
+                    <div class="portfolio-content">
+                        <h3 class="portfolio-title">{{ project.title }}</h3>
+                        {% if project.description %}
+                        <p class="portfolio-description">{{ project.description }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-portfolio">
+                <p>Check back soon to see our amazing projects!</p>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="{% static 'logo.jpeg' %}" alt="Leo&Angel Landscaping Logo">
+                        <h3>Leo&Angel Landscaping</h3>
+                    </div>
+                    <p>Transforming outdoor spaces with professional landscaping services throughout Northern Virginia.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="{% url 'index' %}">Home</a></li>
+                        <li><a href="{% url 'index' %}#about">About</a></li>
+                        <li><a href="{% url 'index' %}#services">Services</a></li>
+                        <li><a href="{% url 'index' %}#before-after">Before & After</a></li>
+                        <li><a href="{% url 'index' %}#testimonials">Testimonials</a></li>
+                        <li><a href="{% url 'index' %}#contact">Contact</a></li>
+                        <li><a href="{% url 'portfolio' %}">Portfolio</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Mowing & Edging</li>
+                        <li>Weeding & Trimming</li>
+                        <li>Mulch & Clean Up</li>
+                        <li>Irrigation & Patios</li>
+                        <li>Christmas Lights</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="tel:2405348025">(240) 534-8025</a></li>
+                        <li><a href="tel:5713371558">(571) 337-1558</a></li>
+                    </ul>
+                    <div class="footer-cta">
+                        <p><strong>Free Estimates Available</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Leo&Angel Landscaping. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+

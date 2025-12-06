@@ -1,0 +1,393 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leo&Angel Landscaping - Professional Landscaping Services</title>
+    <link rel="icon" type="image/jpeg" href="{% static 'logo.jpeg' %}">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        .hero {
+            background-image: 
+                linear-gradient(135deg, rgba(45, 80, 22, 0.4) 0%, rgba(74, 124, 42, 0.4) 100%),
+                url('{% static "hero.jpg" %}');
+            background-position: center 60%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="container">
+            <div class="nav-wrapper">
+                <a href="#home" class="logo">
+                    <img src="{% static 'logo.jpeg' %}" alt="Leo&Angel Landscaping Logo">
+                    <span>Leo&Angel Landscaping</span>
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#home" class="nav-link">Home</a></li>
+                    <li><a href="#about" class="nav-link">About</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
+                    <li><a href="#before-after" class="nav-link">Before & After</a></li>
+                    <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+                    <li><a href="{% url 'portfolio' %}" class="nav-link">Portfolio</a></li>
+                    <li><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Home Section -->
+    <section id="home" class="hero">
+        <div class="hero-overlay"></div>
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="hero-title">Transform Your Outdoor Space</h1>
+                <p class="hero-subtitle">Professional landscaping services for Arlington, Vienna, McLean, and surrounding areas</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn btn-primary">Get Free Estimate</a>
+                    <a href="#services" class="btn btn-secondary">Our Services</a>
+                </div>
+                <div class="hero-features">
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Free Estimates</span>
+                    </div>
+                    <div class="feature-item">
+                        <span class="feature-icon">✓</span>
+                        <span>Quality Guaranteed</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">About Us</h2>
+                <p class="section-subtitle">Your trusted landscaping professionals</p>
+            </div>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Leo&Angel Landscaping</h3>
+                    <p>We are a professional landscaping company dedicated to transforming outdoor spaces into beautiful, functional areas that enhance your property's value and your quality of life.</p>
+                    <p>With years of experience in the industry, we pride ourselves on delivering exceptional service, attention to detail, and customer satisfaction. Our team is committed to bringing your landscaping vision to life.</p>
+                    <div class="about-highlights">
+                        <div class="highlight">
+                            <h4>Areas We Serve</h4>
+                            <p>We proudly serve the following areas in Northern Virginia:</p>
+                            <div class="areas-list">
+                                <span>Arlington</span>
+                                <span>Vienna</span>
+                                <span>McLean</span>
+                                <span>Falls Church</span>
+                                <span>Springfield</span>
+                                <span>Alexandria</span>
+                                <span>Fairfax</span>
+                                <span>Woodbridge</span>
+                                <span>Lorton</span>
+                                <span>Herndon</span>
+                                <span>Tyson</span>
+                                <span>Sterling</span>
+                                <span>Manassas</span>
+                                <span>Annandale</span>
+                                <span>Great Falls</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Our Services</h2>
+                <p class="section-subtitle">Comprehensive landscaping solutions for your property</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'mowing.jpeg' %}" alt="Mowing Service">
+                    </div>
+                    <h3>Mowing</h3>
+                    <p>Regular lawn mowing to keep your grass healthy and well-maintained</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'edgging.jpeg' %}" alt="Edging Service">
+                    </div>
+                    <h3>Edging</h3>
+                    <p>Professional edging for clean, crisp lines along walkways and driveways</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'weeding.jpeg' %}" alt="Weeding Service">
+                    </div>
+                    <h3>Weeding</h3>
+                    <p>Thorough weeding to keep your landscape looking pristine</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'trimming.jpeg' %}" alt="Trimming Service">
+                    </div>
+                    <h3>Trimming</h3>
+                    <p>Expert tree and shrub trimming for healthy growth and aesthetics</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'cleanup.jpg' %}" alt="Clean Up Service">
+                    </div>
+                    <h3>Clean Up</h3>
+                    <p>Complete yard cleanup services including debris removal</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'mulch.jpg' %}" alt="Mulch Service">
+                    </div>
+                    <h3>Mulch</h3>
+                    <p>Quality mulch installation to protect and beautify your landscape</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'irrigation.jpg' %}" alt="Irrigation Service">
+                    </div>
+                    <h3>Irrigation</h3>
+                    <p>Irrigation system installation and maintenance for optimal watering</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'patio.jpg' %}" alt="Patios Service">
+                    </div>
+                    <h3>Patios</h3>
+                    <p>Custom patio design and installation for outdoor living spaces</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <img src="{% static 'light.jpg' %}" alt="Christmas Lights Service">
+                    </div>
+                    <h3>Christmas Lights</h3>
+                    <p>Professional Christmas light installation to brighten your holidays</p>
+                </div>
+            </div>
+            <div class="services-cta">
+                <p>Need a custom solution? We're here to help!</p>
+                <a href="#contact" class="btn btn-primary">Get Free Estimate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Section -->
+    <section id="before-after" class="before-after">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Before & After</h2>
+                <p class="section-subtitle">See the transformation we've created for our clients</p>
+            </div>
+            {% if before_after_items %}
+            <div class="before-after-grid">
+                {% for item in before_after_items %}
+                <div class="before-after-card">
+                    {% if item.title %}
+                    <h3 class="before-after-title">{{ item.title }}</h3>
+                    {% endif %}
+                    <div class="before-after-images">
+                        <div class="image-container">
+                            <div class="image-label">Before</div>
+                            <img src="{{ item.before_image.url }}" alt="Before - {{ item.title|default:'Transformation' }}" loading="lazy">
+                        </div>
+                        <div class="image-container">
+                            <div class="image-label after-label">After</div>
+                            <img src="{{ item.after_image.url }}" alt="After - {{ item.title|default:'Transformation' }}" loading="lazy">
+                        </div>
+                    </div>
+                    {% if item.description %}
+                    <p class="before-after-description">{{ item.description }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+            {% else %}
+            <div class="no-before-after">
+                <p>Check back soon to see our amazing transformations!</p>
+            </div>
+            {% endif %}
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">What Our Customers Say</h2>
+                <p class="section-subtitle">Don't just take our word for it</p>
+            </div>
+            <div class="testimonials-grid">
+                {% for testimonial in testimonials %}
+                <div class="testimonial-card">
+                    <div class="testimonial-rating">
+                        {% for i in "12345" %}
+                            {% if forloop.counter <= testimonial.rating %}
+                                <span class="star filled">★</span>
+                            {% else %}
+                                <span class="star">★</span>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    <p class="testimonial-text">"{{ testimonial.comment }}"</p>
+                    <p class="testimonial-author">— {{ testimonial.name }}</p>
+                </div>
+                {% empty %}
+                <div class="no-testimonials">
+                    <p>Be the first to leave a testimonial!</p>
+                </div>
+                {% endfor %}
+            </div>
+            
+            <!-- Testimonial Form -->
+            <div class="testimonial-form-container">
+                <h3>Share Your Experience</h3>
+                <form method="POST" class="testimonial-form">
+                    {% csrf_token %}
+                    <input type="hidden" name="form_type" value="testimonial">
+                    <div class="form-group">
+                        <label for="name">Your Name</label>
+                        <input type="text" id="name" name="name" required value="{{ testimonial_data.name }}">
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating</label>
+                        <select id="rating" name="rating" required>
+                            <option value="">Select Rating</option>
+                            <option value="5" {% if testimonial_data.rating == '5' %}selected{% endif %}>5 Stars</option>
+                            <option value="4" {% if testimonial_data.rating == '4' %}selected{% endif %}>4 Stars</option>
+                            <option value="3" {% if testimonial_data.rating == '3' %}selected{% endif %}>3 Stars</option>
+                            <option value="2" {% if testimonial_data.rating == '2' %}selected{% endif %}>2 Stars</option>
+                            <option value="1" {% if testimonial_data.rating == '1' %}selected{% endif %}>1 Star</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="comment">Your Review</label>
+                        <textarea id="comment" name="comment" rows="4" required>{{ testimonial_data.comment }}</textarea>
+                    </div>
+                    {% if testimonial_errors %}
+                    <div class="form-errors">
+                        {% for error in testimonial_errors %}
+                        <p class="error">{{ error }}</p>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <button type="submit" class="btn btn-primary">Submit Review</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">Free estimates available - Contact us today!</p>
+            </div>
+            <div class="contact-content">
+                <!-- Contact Info -->
+                <div class="contact-info">
+                        <div class="contact-item">
+                            <div class="contact-icon">📞</div>
+                            <div class="contact-details">
+                                <h3>Primary Phone</h3>
+                                <a href="tel:2405348025">(240) 534-8025</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📱</div>
+                            <div class="contact-details">
+                                <h3>Secondary Phone</h3>
+                                <a href="tel:5713371558">(571) 337-1558</a>
+                            </div>
+                        </div>
+                        <div class="contact-item">
+                            <div class="contact-icon">📍</div>
+                            <div class="contact-details">
+                                <h3>Service Areas</h3>
+                                <p>Northern Virginia</p>
+                            </div>
+                        </div>
+                        <div class="contact-item highlight-box">
+                            <div class="contact-icon">✨</div>
+                            <div class="contact-details">
+                                <h3>Free Estimates</h3>
+                                <p>No obligation - Contact us today!</p>
+                            </div>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <img src="{% static 'logo.jpeg' %}" alt="Leo&Angel Landscaping Logo">
+                        <h3>Leo&Angel Landscaping</h3>
+                    </div>
+                    <p>Transforming outdoor spaces with professional landscaping services throughout Northern Virginia.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#before-after">Before & After</a></li>
+                        <li><a href="#testimonials">Testimonials</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <ul>
+                        <li>Mowing & Edging</li>
+                        <li>Weeding & Trimming</li>
+                        <li>Mulch & Clean Up</li>
+                        <li>Irrigation & Patios</li>
+                        <li>Christmas Lights</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact Us</h4>
+                    <ul>
+                        <li><a href="tel:2405348025">(240) 534-8025</a></li>
+                        <li><a href="tel:5713371558">(571) 337-1558</a></li>
+                    </ul>
+                    <div class="footer-cta">
+                        <p><strong>Free Estimates Available</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Leo&Angel Landscaping. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>
+
