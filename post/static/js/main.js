@@ -81,7 +81,7 @@ const observer = new IntersectionObserver((entries) => {
 
 // Observe elements for animation
 document.addEventListener('DOMContentLoaded', () => {
-    const animateElements = document.querySelectorAll('.service-card, .testimonial-card, .contact-item, .highlight, .before-after-card, .contact-form-container');
+    const animateElements = document.querySelectorAll('.service-card, .testimonial-card, .highlight, .before-after-card, .contact-form-container');
     
     animateElements.forEach(el => {
         el.style.opacity = '0';
@@ -89,6 +89,21 @@ document.addEventListener('DOMContentLoaded', () => {
         el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
         observer.observe(el);
     });
+
+    const contactItems = document.querySelectorAll('.contact-item');
+    const contactObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-in');
+                entry.target.addEventListener('transitionend', () => {
+                    entry.target.style.transitionDelay = '0ms';
+                }, { once: true });
+                contactObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.25 });
+
+    contactItems.forEach(item => contactObserver.observe(item));
 });
 
 // Form validation feedback
