@@ -21,6 +21,11 @@
     box-sizing: border-box;
 }
 
+html,
+body {
+    background: #ffffff;
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -75,6 +80,36 @@ body {
     height: 50px;
     object-fit: contain;
     border-radius: 8px;
+}
+
+.title-wave {
+    display: inline-block;
+}
+
+.title-wave .wave-word {
+    display: inline-block;
+    white-space: nowrap;
+}
+
+.title-wave .wave-letter {
+    display: inline-block;
+    animation: titleWave 4.2s ease-in-out infinite;
+    animation-delay: calc(var(--i) * 0.14s);
+}
+
+@keyframes titleWave {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .title-wave .wave-letter {
+        animation: none;
+    }
 }
 
 .nav-menu {
@@ -324,7 +359,7 @@ section {
     margin-top: 1rem;
 }
 
-.areas-list span {
+.areas-list > span {
     background: var(--accent-color);
     color: var(--white);
     padding: 0.5rem 1rem;
@@ -812,9 +847,10 @@ section {
    ============================================ */
 
 .footer {
-    background: var(--primary-color);
-    color: var(--white);
+    background: var(--bg-light);
+    color: var(--text-dark);
     padding: 3rem 0 1rem;
+    border-top: 1px solid #e6e6e6;
 }
 
 .footer-content {
@@ -827,7 +863,7 @@ section {
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: var(--white);
+    color: var(--primary-color);
 }
 
 .footer-logo {
@@ -858,7 +894,7 @@ section {
 }
 
 .footer-section ul li a {
-    color: var(--white);
+    color: var(--text-dark);
     text-decoration: none;
     opacity: 0.9;
     transition: var(--transition);
@@ -872,14 +908,14 @@ section {
 .footer-cta {
     margin-top: 1rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.1);
+    background: var(--white);
     border-radius: 8px;
 }
 
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    border-top: 1px solid #e0e0e0;
     opacity: 0.8;
 }
 
@@ -1142,7 +1178,7 @@ section {
         gap: 0.75rem;
     }
 
-    .areas-list span {
+    .areas-list > span {
         padding: 0.4rem 0.875rem;
         font-size: 0.85rem;
     }

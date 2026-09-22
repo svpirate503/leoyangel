@@ -1,3 +1,32 @@
+const titleWave = document.querySelector('.title-wave');
+if (titleWave) {
+    const text = titleWave.textContent;
+    titleWave.textContent = '';
+    let index = 0;
+
+    text.split(/(\s+)/).forEach((part) => {
+        if (!part) {
+            return;
+        }
+        if (/^\s+$/.test(part)) {
+            titleWave.appendChild(document.createTextNode(' '));
+            return;
+        }
+
+        const word = document.createElement('span');
+        word.className = 'wave-word';
+        [...part].forEach((char) => {
+            const letter = document.createElement('span');
+            letter.className = 'wave-letter';
+            letter.style.setProperty('--i', index);
+            letter.textContent = char;
+            word.appendChild(letter);
+            index += 1;
+        });
+        titleWave.appendChild(word);
+    });
+}
+
 // Mobile Menu Toggle
 const menuToggle = document.getElementById('menuToggle');
 const navMenu = document.getElementById('navMenu');
