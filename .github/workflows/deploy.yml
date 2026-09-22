@@ -13,4 +13,4 @@ jobs:
           username: ${{ secrets.VPS_USER }}
           key: ${{ secrets.VPS_SSH_KEY }}
           port: ${{ secrets.VPS_PORT }}
-          script: /mnt/leoangel/deploy.sh
+          script: /mnt/leoyangel/deploy.sh
