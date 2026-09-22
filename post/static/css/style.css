@@ -3,17 +3,15 @@
    ============================================ */
 
 :root {
-    --bg: #090b0a;
-    --bg-alt: #111513;
-    --surface: #ffffff;
-    --ink: #121614;
-    --ink-muted: #5c665f;
-    --text: #f5f6f4;
-    --text-muted: #b4bbb6;
-    --line: rgba(255, 255, 255, 0.14);
-    --line-strong: rgba(255, 255, 255, 0.28);
-    --shadow: rgba(0, 0, 0, 0.28);
-    --shadow-lg: rgba(0, 0, 0, 0.45);
+    --primary-color: #2d5016;
+    --secondary-color: #4a7c2a;
+    --accent-color: #6ba644;
+    --text-dark: #2c3e50;
+    --text-light: #7f8c8d;
+    --bg-light: #f8f9fa;
+    --white: #ffffff;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --shadow-lg: rgba(0, 0, 0, 0.15);
     --transition: all 0.3s ease;
 }
 
@@ -23,17 +21,10 @@
     box-sizing: border-box;
 }
 
-html {
-    color-scheme: dark;
-}
-
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
-    color: var(--text);
-    background:
-        radial-gradient(900px 420px at 85% -10%, rgba(255, 255, 255, 0.06), transparent 55%),
-        var(--bg);
+    color: var(--text-dark);
     overflow-x: hidden;
 }
 
@@ -52,16 +43,14 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(9, 11, 10, 0.78);
-    backdrop-filter: blur(18px);
-    border-bottom: 1px solid var(--line);
+    background: var(--white);
+    box-shadow: 0 2px 10px var(--shadow);
     z-index: 1000;
     transition: var(--transition);
 }
 
 .navbar.scrolled {
-    background: rgba(9, 11, 10, 0.94);
-    box-shadow: 0 8px 30px var(--shadow);
+    box-shadow: 0 4px 20px var(--shadow-lg);
 }
 
 .nav-wrapper {
@@ -76,10 +65,9 @@ body {
     align-items: center;
     gap: 12px;
     text-decoration: none;
-    color: var(--surface);
+    color: var(--primary-color);
     font-weight: 600;
     font-size: 1.25rem;
-    letter-spacing: -0.02em;
 }
 
 .logo img {
@@ -98,7 +86,7 @@ body {
 
 .nav-link {
     text-decoration: none;
-    color: var(--text);
+    color: var(--text-dark);
     font-weight: 500;
     transition: var(--transition);
     position: relative;
@@ -111,12 +99,12 @@ body {
     left: 0;
     width: 0;
     height: 2px;
-    background: var(--surface);
+    background: var(--accent-color);
     transition: var(--transition);
 }
 
 .nav-link:hover {
-    color: var(--surface);
+    color: var(--accent-color);
 }
 
 .nav-link:hover::after {
@@ -136,7 +124,7 @@ body {
 .menu-toggle span {
     width: 25px;
     height: 3px;
-    background: var(--surface);
+    background: var(--primary-color);
     transition: var(--transition);
     border-radius: 3px;
 }
@@ -151,11 +139,11 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: var(--bg);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    color: var(--surface);
+    color: var(--white);
     text-align: center;
     padding-top: 80px;
 }
@@ -166,7 +154,7 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background: linear-gradient(180deg, rgba(9, 11, 10, 0.45) 0%, rgba(9, 11, 10, 0.28) 42%, rgba(9, 11, 10, 0.72) 100%);
+    background: rgba(0, 0, 0, 0.2);
 }
 
 .hero-content {
@@ -179,7 +167,6 @@ body {
 .hero-title {
     font-size: 3.5rem;
     font-weight: 700;
-    letter-spacing: -0.045em;
     margin-bottom: 1rem;
     animation: fadeInUp 0.8s ease;
 }
@@ -212,8 +199,7 @@ body {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(255, 255, 255, 0.12);
-    border: 1px solid var(--line-strong);
+    background: rgba(255, 255, 255, 0.15);
     padding: 0.75rem 1.5rem;
     border-radius: 50px;
     backdrop-filter: blur(10px);
@@ -241,26 +227,26 @@ body {
 }
 
 .btn-primary {
-    background: var(--surface);
-    color: var(--ink);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+    background: var(--accent-color);
+    color: var(--white);
+    box-shadow: 0 4px 15px rgba(107, 166, 68, 0.3);
 }
 
 .btn-primary:hover {
-    background: #eceeed;
+    background: #5a9540;
     transform: translateY(-2px);
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.32);
+    box-shadow: 0 6px 20px rgba(107, 166, 68, 0.4);
 }
 
 .btn-secondary {
     background: transparent;
-    color: var(--surface);
-    border: 1px solid var(--line-strong);
+    color: var(--white);
+    border: 2px solid var(--white);
 }
 
 .btn-secondary:hover {
-    background: var(--surface);
-    color: var(--ink);
+    background: var(--white);
+    color: var(--primary-color);
 }
 
 /* ============================================
@@ -279,14 +265,13 @@ section {
 .section-title {
     font-size: 2.5rem;
     font-weight: 700;
-    letter-spacing: -0.04em;
-    color: var(--surface);
+    color: var(--primary-color);
     margin-bottom: 0.5rem;
 }
 
 .section-subtitle {
     font-size: 1.2rem;
-    color: var(--text-muted);
+    color: var(--text-light);
 }
 
 /* ============================================
@@ -294,7 +279,7 @@ section {
    ============================================ */
 
 .about {
-    background: var(--bg);
+    background: var(--bg-light);
 }
 
 .about-content {
@@ -304,8 +289,7 @@ section {
 
 .about-text h3 {
     font-size: 2rem;
-    color: var(--surface);
-    letter-spacing: -0.03em;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -313,7 +297,7 @@ section {
     font-size: 1.1rem;
     line-height: 1.8;
     margin-bottom: 1.5rem;
-    color: var(--text-muted);
+    color: var(--text-dark);
 }
 
 .about-highlights {
@@ -321,21 +305,15 @@ section {
 }
 
 .highlight {
-    background: var(--surface);
-    color: var(--ink);
+    background: var(--white);
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 18px 40px var(--shadow);
-}
-
-.highlight p {
-    color: var(--ink-muted);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
 }
 
 .highlight h4 {
     font-size: 1.5rem;
-    color: var(--ink);
-    letter-spacing: -0.02em;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
@@ -347,10 +325,10 @@ section {
 }
 
 .areas-list span {
-    background: var(--ink);
-    color: var(--surface);
+    background: var(--accent-color);
+    color: var(--white);
     padding: 0.5rem 1rem;
-    border-radius: 999px;
+    border-radius: 25px;
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -360,7 +338,7 @@ section {
    ============================================ */
 
 .services {
-    background: var(--bg-alt);
+    background: var(--white);
 }
 
 .services-grid {
@@ -371,20 +349,20 @@ section {
 }
 
 .service-card {
-    background: var(--surface);
-    color: var(--ink);
+    background: var(--bg-light);
     padding: 2rem;
-    border-radius: 20px;
+    border-radius: 15px;
     text-align: center;
     transition: var(--transition);
-    border: 1px solid transparent;
+    border: 2px solid transparent;
     display: flex;
     flex-direction: column;
 }
 
 .service-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 18px 40px var(--shadow-lg);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow);
+    border-color: var(--accent-color);
 }
 
 .service-image {
@@ -413,29 +391,27 @@ section {
 
 .service-card h3 {
     font-size: 1.5rem;
-    color: var(--ink);
-    letter-spacing: -0.02em;
+    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 .service-card p {
-    color: var(--ink-muted);
+    color: var(--text-light);
     line-height: 1.6;
 }
 
 .services-cta {
     text-align: center;
     margin-top: 3rem;
-    padding: 2.5rem 2rem;
-    background: transparent;
-    border: 1px solid var(--line);
-    border-radius: 20px;
+    padding: 2rem;
+    background: var(--bg-light);
+    border-radius: 15px;
 }
 
 .services-cta p {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    color: var(--text);
+    color: var(--text-dark);
 }
 
 /* ============================================
@@ -443,7 +419,7 @@ section {
    ============================================ */
 
 .before-after {
-    background: var(--bg);
+    background: var(--white);
 }
 
 .before-after-grid {
@@ -454,22 +430,21 @@ section {
 }
 
 .before-after-card {
-    background: var(--surface);
-    border-radius: 20px;
+    background: var(--bg-light);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 18px 40px var(--shadow);
+    box-shadow: 0 5px 20px var(--shadow);
     transition: var(--transition);
 }
 
 .before-after-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 48px var(--shadow-lg);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-lg);
 }
 
 .before-after-title {
     font-size: 1.5rem;
-    color: var(--ink);
-    letter-spacing: -0.02em;
+    color: var(--primary-color);
     padding: 1.5rem 1.5rem 1rem;
     margin: 0;
     text-align: center;
@@ -504,23 +479,23 @@ section {
     position: absolute;
     top: 15px;
     left: 15px;
-    background: var(--surface);
-    color: var(--ink);
+    background: rgba(45, 80, 22, 0.9);
+    color: var(--white);
     padding: 0.5rem 1rem;
-    border-radius: 999px;
+    border-radius: 25px;
     font-weight: 600;
     font-size: 0.9rem;
     z-index: 10;
+    backdrop-filter: blur(10px);
 }
 
 .image-label.after-label {
-    background: var(--ink);
-    color: var(--surface);
+    background: rgba(107, 166, 68, 0.9);
 }
 
 .before-after-description {
     padding: 1.5rem;
-    color: var(--ink-muted);
+    color: var(--text-dark);
     line-height: 1.8;
     margin: 0;
     text-align: center;
@@ -530,10 +505,9 @@ section {
 .no-before-after {
     text-align: center;
     padding: 4rem 2rem;
-    color: var(--text-muted);
-    background: transparent;
-    border: 1px solid var(--line);
-    border-radius: 20px;
+    color: var(--text-light);
+    background: var(--bg-light);
+    border-radius: 15px;
     font-size: 1.1rem;
 }
 
@@ -542,7 +516,7 @@ section {
    ============================================ */
 
 .portfolio {
-    background: var(--bg);
+    background: var(--white);
 }
 
 .portfolio-page {
@@ -557,18 +531,18 @@ section {
 }
 
 .portfolio-card {
-    background: var(--surface);
-    border-radius: 20px;
+    background: var(--bg-light);
+    border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 18px 40px var(--shadow);
+    box-shadow: 0 5px 20px var(--shadow);
     transition: var(--transition);
     display: flex;
     flex-direction: column;
 }
 
 .portfolio-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 48px var(--shadow-lg);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-lg);
 }
 
 .portfolio-image {
@@ -595,14 +569,13 @@ section {
 
 .portfolio-title {
     font-size: 1.5rem;
-    color: var(--ink);
-    letter-spacing: -0.02em;
+    color: var(--primary-color);
     margin-bottom: 0.75rem;
     font-weight: 600;
 }
 
 .portfolio-description {
-    color: var(--ink-muted);
+    color: var(--text-dark);
     line-height: 1.8;
     margin: 0;
     font-size: 1rem;
@@ -611,10 +584,9 @@ section {
 .no-portfolio {
     text-align: center;
     padding: 4rem 2rem;
-    color: var(--text-muted);
-    background: transparent;
-    border: 1px solid var(--line);
-    border-radius: 20px;
+    color: var(--text-light);
+    background: var(--bg-light);
+    border-radius: 15px;
     font-size: 1.1rem;
 }
 
@@ -623,7 +595,7 @@ section {
    ============================================ */
 
 .testimonials {
-    background: var(--bg-alt);
+    background: var(--bg-light);
 }
 
 .testimonials-grid {
@@ -634,16 +606,16 @@ section {
 }
 
 .testimonial-card {
-    background: var(--surface);
+    background: var(--white);
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 18px 40px var(--shadow);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
     transition: var(--transition);
 }
 
 .testimonial-card:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 22px 48px var(--shadow-lg);
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow-lg);
 }
 
 .testimonial-rating {
@@ -661,7 +633,7 @@ section {
 
 .testimonial-text {
     font-style: italic;
-    color: var(--ink);
+    color: var(--text-dark);
     margin-bottom: 1rem;
     line-height: 1.8;
     font-size: 1.05rem;
@@ -669,40 +641,29 @@ section {
 
 .testimonial-author {
     font-weight: 600;
-    color: var(--ink);
+    color: var(--primary-color);
 }
 
 .no-testimonials {
     text-align: center;
     padding: 3rem;
-    color: var(--text-muted);
+    color: var(--text-light);
 }
 
 .testimonial-form-container {
     max-width: 600px;
     margin: 0 auto;
-    background: var(--surface);
-    color: var(--ink);
+    background: var(--white);
     padding: 2.5rem;
-    border-radius: 20px;
-    box-shadow: 0 18px 40px var(--shadow);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
 }
 
 .testimonial-form-container h3 {
     font-size: 1.8rem;
-    color: var(--ink);
-    letter-spacing: -0.03em;
+    color: var(--primary-color);
     margin-bottom: 1.5rem;
     text-align: center;
-}
-
-.testimonial-form .btn-primary {
-    background: var(--ink);
-    color: var(--surface);
-}
-
-.testimonial-form .btn-primary:hover {
-    background: #2a302c;
 }
 
 .testimonial-form {
@@ -718,19 +679,16 @@ section {
 
 .form-group label {
     font-weight: 600;
-    color: var(--ink);
+    color: var(--text-dark);
     margin-bottom: 0.5rem;
 }
 
 .form-group input,
 .form-group select,
 .form-group textarea {
-    padding: 0.85rem 1rem;
-    border: 1px solid #e4e6e3;
-    border-radius: 12px;
-    background: #f7f8f6;
-    color: var(--ink);
-    color-scheme: light;
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
     font-family: 'Poppins', sans-serif;
     font-size: 1rem;
     transition: var(--transition);
@@ -740,8 +698,7 @@ section {
 .form-group select:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: var(--ink);
-    background: var(--surface);
+    border-color: var(--accent-color);
 }
 
 .form-errors {
@@ -763,11 +720,10 @@ section {
 }
 
 .contact-form-container {
-    background: var(--surface);
-    color: var(--ink);
+    background: var(--bg-light);
     padding: 2rem;
-    border-radius: 20px;
-    box-shadow: 0 18px 40px var(--shadow);
+    border-radius: 15px;
+    box-shadow: 0 5px 20px var(--shadow);
 }
 
 .contact-wrapper {
@@ -782,174 +738,73 @@ section {
    ============================================ */
 
 .contact {
-    background: var(--bg);
+    background: var(--white);
 }
 
 .contact-content {
-    max-width: 980px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
 .contact-info {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.25rem;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .contact-item {
-    position: relative;
-    overflow: hidden;
-    background: var(--surface);
-    color: var(--ink);
-    padding: 1.35rem 1.4rem;
-    border-radius: 22px;
+    background: var(--bg-light);
+    padding: 2rem;
+    border-radius: 15px;
     display: flex;
-    gap: 1rem;
-    align-items: center;
-    text-decoration: none;
-    border: 1px solid rgba(255, 255, 255, 0.04);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
-    opacity: 0;
-    transform: translateY(28px);
-    transition: opacity 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                transform 0.7s cubic-bezier(0.22, 1, 0.36, 1),
-                box-shadow 0.45s ease;
-}
-
-.contact-item.is-in {
-    opacity: 1;
-    transform: translateY(0);
-    transition-delay: calc(var(--i) * 110ms);
-}
-
-.contact-item::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(115deg, transparent 30%, rgba(18, 22, 20, 0.06) 48%, transparent 66%);
-    transform: translateX(-130%);
-    transition: transform 0.7s ease;
-    pointer-events: none;
+    gap: 1.5rem;
+    align-items: flex-start;
+    transition: var(--transition);
 }
 
 .contact-item:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 22px 46px rgba(0, 0, 0, 0.38);
-    transition-delay: 0s;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px var(--shadow);
 }
 
-.contact-item:hover::after {
-    transform: translateX(130%);
+.contact-item.highlight-box {
+    background: linear-gradient(135deg, var(--accent-color) 0%, var(--secondary-color) 100%);
+    color: var(--white);
 }
 
-.contact-item:focus-visible {
-    outline: 2px solid var(--surface);
-    outline-offset: 3px;
+.contact-item.highlight-box h3,
+.contact-item.highlight-box p {
+    color: var(--white);
 }
 
 .contact-icon {
-    width: 58px;
-    height: 58px;
-    border-radius: 16px;
-    background: var(--ink);
-    color: var(--surface);
-    display: grid;
-    place-items: center;
+    font-size: 2.5rem;
     flex-shrink: 0;
-    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.45s ease;
-}
-
-.contact-icon svg {
-    width: 26px;
-    height: 26px;
-}
-
-.contact-item:hover .contact-icon {
-    transform: translateY(-2px) scale(1.06) rotate(-6deg);
-    box-shadow: 0 12px 24px rgba(18, 22, 20, 0.28);
-}
-
-.contact-details {
-    display: flex;
-    flex-direction: column;
-    min-width: 0;
-}
-
-.contact-kicker {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.45rem;
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink-muted);
-    margin-bottom: 0.2rem;
 }
 
 .contact-details h3 {
-    font-size: 1.05rem;
-    color: var(--ink);
-    letter-spacing: -0.02em;
-    margin-bottom: 0.15rem;
+    font-size: 1.3rem;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
 }
 
-.contact-value {
-    color: var(--ink);
-    font-size: 1.15rem;
+.contact-details a {
+    color: var(--accent-color);
+    text-decoration: none;
+    font-size: 1.2rem;
     font-weight: 600;
-    letter-spacing: -0.02em;
+    transition: var(--transition);
 }
 
-.contact-go {
-    margin-left: auto;
-    flex-shrink: 0;
-    font-size: 0.78rem;
-    font-weight: 700;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--ink);
-    padding: 0.45rem 0.8rem;
-    border-radius: 999px;
-    border: 1px solid rgba(18, 22, 20, 0.12);
-    opacity: 0;
-    transform: translateX(-10px);
-    transition: opacity 0.35s ease, transform 0.35s ease, background 0.35s ease, color 0.35s ease;
+.contact-details a:hover {
+    color: var(--primary-color);
 }
 
-.contact-item:hover .contact-go {
-    opacity: 1;
-    transform: translateX(0);
-    background: var(--ink);
-    color: var(--surface);
-}
-
-.pulse-dot {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    background: #22c55e;
-    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
-    animation: contactPulse 1.8s ease infinite;
-}
-
-@keyframes contactPulse {
-    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
-    70% { box-shadow: 0 0 0 9px rgba(34, 197, 94, 0); }
-    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-}
-
-@media (prefers-reduced-motion: reduce) {
-    .contact-item,
-    .contact-item.is-in,
-    .contact-icon,
-    .contact-go,
-    .pulse-dot {
-        animation: none;
-        transition: none;
-        opacity: 1;
-        transform: none;
-    }
+.contact-details p {
+    color: var(--text-light);
+    margin-top: 0.5rem;
 }
 
 /* ============================================
@@ -957,10 +812,9 @@ section {
    ============================================ */
 
 .footer {
-    background: #070908;
-    color: var(--text);
+    background: var(--primary-color);
+    color: var(--white);
     padding: 3rem 0 1rem;
-    border-top: 1px solid var(--line);
 }
 
 .footer-content {
@@ -973,8 +827,7 @@ section {
 .footer-section h3,
 .footer-section h4 {
     margin-bottom: 1rem;
-    color: var(--surface);
-    letter-spacing: -0.02em;
+    color: var(--white);
 }
 
 .footer-logo {
@@ -1005,23 +858,22 @@ section {
 }
 
 .footer-section ul li a {
-    color: var(--text);
+    color: var(--white);
     text-decoration: none;
-    opacity: 0.8;
+    opacity: 0.9;
     transition: var(--transition);
 }
 
 .footer-section ul li a:hover {
     opacity: 1;
-    color: var(--surface);
+    color: var(--accent-color);
 }
 
 .footer-cta {
     margin-top: 1rem;
     padding: 1rem;
-    background: rgba(255, 255, 255, 0.06);
-    border: 1px solid var(--line);
-    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
 }
 
 .footer-bottom {
@@ -1115,8 +967,7 @@ section {
         top: 70px;
         left: -100%;
         flex-direction: column;
-        background: #101412;
-        border-top: 1px solid var(--line);
+        background: var(--white);
         width: 100%;
         text-align: center;
         transition: var(--transition);
@@ -1343,31 +1194,21 @@ section {
     }
 
     .contact-item {
-        padding: 1.1rem;
-        gap: 0.85rem;
+        padding: 1.25rem;
+        flex-direction: column;
+        text-align: center;
     }
 
     .contact-icon {
-        width: 48px;
-        height: 48px;
-        border-radius: 14px;
-    }
-
-    .contact-icon svg {
-        width: 22px;
-        height: 22px;
-    }
-
-    .contact-go {
-        display: none;
+        font-size: 2rem;
     }
 
     .contact-details h3 {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
     }
 
-    .contact-value {
-        font-size: 1rem;
+    .contact-details a {
+        font-size: 1.1rem;
     }
 
     .before-after-title {
